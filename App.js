@@ -16,14 +16,14 @@ function App() {
           const web3Instance = new Web3(window.ethereum);
           setWeb3(web3Instance);
 
-          // Request account access if needed
+          
           await window.ethereum.request({ method: 'eth_requestAccounts' });
 
-          // Get the connected account
+          
           const accounts = await web3Instance.eth.getAccounts();
           setAccount(accounts[0]);
 
-          // Instantiate the contract
+          
           const contractInstance = new web3Instance.eth.Contract(contractABI, CONTRACT_ADDRESS);
           setContract(contractInstance);
         } catch (error) {
@@ -37,12 +37,12 @@ function App() {
     initWeb3();
   }, []);
 
-  // Your application logic can go here
+ 
 
   return (
     <div className="App">
       <h1>Social Media DApp</h1>
-      {/* Your application components can go here */}
+      {}
     </div>
   );
 }
